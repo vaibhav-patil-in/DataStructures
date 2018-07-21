@@ -3,7 +3,7 @@
 Arrays are collection of similar items. They are index based and consume unused spaces.
 Size of the array is defined at the time of creation.
 
-Big-O Notation
+## Time Complexity - Big-O Notation
 
     - Get - O(1) as Index based
     - Add  - O(N) as adding elements might have to travese to end
