@@ -23,7 +23,7 @@ public class DynamicArray<T> {
 	
 	public void add(T element) {
 		
-		//Ensure capacity and increase if cannot accomodate new elements
+		//Ensure capacity and increase if cannot accommodate new elements
 		ensureCapacity(size+1);
 		data[size++] = element;
 		
