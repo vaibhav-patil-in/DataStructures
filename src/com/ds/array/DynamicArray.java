@@ -2,30 +2,32 @@ package com.ds.array;
 
 import java.util.Arrays;
 
-public class DynamicArray<T> {
+public class DynamicArray<E> {
 
-	Object[] data;
-	int size;
+	private Object[] elements;
+	private int size = 0;
+	private static final int DEFAULT_CAPACITY = 0;
 	
 	public DynamicArray() {
-		this.size = 0;
-		this.data = new Object[0];
+		this.elements = new Object[DEFAULT_CAPACITY];
 	}
 	
 	public int getSize() {
-		return this.data.length;
+		return this.elements.length;
 	}
 	
 	@SuppressWarnings("unchecked")
-	public T get(int index) {
-		return (T) data[index];
+	public E get(int index) {
+		return (E) elements[index];
 	}
 	
-	public void add(T element) {
+	public void add(E element) {
 		
 		//Ensure capacity and increase if cannot accommodate new elements
 		ensureCapacity(size+1);
-		data[size++] = element;
+
+		//Add element
+		elements[size++] = element;
 		
 	}
 
@@ -40,7 +42,7 @@ public class DynamicArray<T> {
 			}
 			
 			//Copy element from First array in new array of double size
-			data = Arrays.copyOf(data, newCapacity);
+			elements = Arrays.copyOf(elements, newCapacity);
 		}
 	}
 	
@@ -64,5 +66,4 @@ public class DynamicArray<T> {
 			System.out.println(da.get(i));
 		}
 	}
-
 }
